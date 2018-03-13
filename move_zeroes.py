@@ -2,22 +2,11 @@ import time
 
 
 def move_zeroes(arr):
-    index = arr.index(0)
-    if index < 0:
-        return
-    elif index == len(arr) - 1:
-        return
-
-    for i in range(len(arr) - 1):
-        if arr[i] == 0 and arr[i+1] != 0:
-            if index == i:
-                arr[i] = arr[i+1]
-                arr[i+1] = 0
-                index = i + 1
-            else:
-                arr[index] = arr[i+1]
-                arr[i+1] = 0
-                index += 1
+    zero = 0 # Holds place of leftmost '0' #
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            arr[i], arr[zero] = arr[zero], arr[i]
+            zero += 1
             
 
 
