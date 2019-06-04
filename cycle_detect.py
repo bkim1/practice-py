@@ -17,10 +17,10 @@ def cycle_detect(head):
         if fast == slow:
             cycle = True
             break
-    
+
     if not cycle:
         return None
-    
+
     slow = head
     while fast != slow:
         slow = slow.next
